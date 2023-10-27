@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/mobile.css">
+  <link rel="stylesheet" href="./css/desktop.css">
+  <title>Homework_5</title>
+</head>
+<body>
+  <div id="earth"></div>
+  <header>
+    <img id="logo" src="./images/logo.png" alt="">
+    <h1 id="title">Homework</h1>
+    <h2><a href="#list">Ссылка на список ссылок</a></h2>
+    <h2><a href="#form">Ссылка на форму</a></h2>
+    <h2><a href="#table">Ссылка на таблицу</a></h2>
+  </header>
+  <div id="centre">
+
+    <nav class="frame" id="list">
+      <ul>
+        <li>Абсолютная гиперссылка <a href="http://www.kubsu.ru/">здесь.</a></li>
+        <li>Абсолютная гиперссылка с протоколом https <a href="https://www.kubsu.ru/">здесь</a></li>
+        <li>Ссылка-изображение<a href="https://www.kubsu.ru/"><img src="./images/my_image_1.png" alt=""></a></li>
+        <li>Сокращенная ссылка на внутреннюю страницу <a href="./page1.html">здесь</a></li>
+        <li>Сокращенную ссылка на главную страницу<a href="/index.html">здесь</a></li>
+        <li>Ссылка на фрагмент текущей страницы <a href="#abc">здесь</a></li>
+        <li><a href="https://kubsu.ru/?product=1234&color=pink&size=m">ссылка с тремя параметрами кубгу</a></li>
+        <li> <a href="https://www.kubsu.ru/ru/abiturient/dogovor?id=omega-media-query-dummy">Ссылка с параметром id</a></li>
+        <li><a href="./page.html">Относительная ссылка на страницу в текущем каталоге</a></li>
+        <li><a href="./about/page2.html">Относительная на страницу в каталоге about</a></li>
+        <li><a href="./about/page2.html">Относительная на страницу в каталоге уровнем выше текущего;</a></li>
+        <li><a href="./about/level2/page3.html">Относительная ссылка на страницу в каталоге двумя уровнями выше;</a></li>
+        <li>контекстную (прямо <a href="./page.html">здесь</a>) в тексте абзаца</li>
+        <li>ссылку на фрагмент страницы стороннего сайта <a href='https://ru.wikipedia.org/wiki/Картофель?#Популярные_сорта_картофеля'>здесь</a>;</li>
+        <li id="abc">ссылки из прямоугольных и круглых областей картинки (HTML-тег map).
+          <map name="AaA">
+            <area shape="poly" coords="0,0,0,150,150,150 " href="./page1.html" alt=""/>
+            <area shape="circle" coords="275,75,75" href="./about/page2.html" alt=""/>
+          </map>
+          <img usemap="#AaA" src="./images/350x150.png" alt="350 x 150 pic" /></li>
+        <li>Ссылка с пустым href <a href="">здесь</a></li>
+        <li>Cсылка без href <a>здесь</a>;</li>
+        <li>Ссылка, по которой запрещен переход поисковикам <a href="https://example.com/" rel="nofollow">здесь</a></li>
+        <li>запрещенную для индексации поисковиками <noindex><a href="https://example.com/">здесь</a></noindex> </li>
+        <li>нумерованный список ссылок с подписями title:
+          <ol>
+            <li>Ссылка на page1 <a href="./page1.html" title="page1">здесь</a></li>
+            <li>Ссылка на page2 <a href="./about/page2.html" title="page2">здесь</a></li>
+            <li>Ссылка на page3 <a href="./about/level2/page3.html" title="page3">здесь</a></li>
+            </ol>
+        </li>
+        <li>ссылку на файл на сервере FTP с авторизацией;</li>
+      </ul>
+    </nav>
+
+    <form class="frame" action="bad" method="post" id="form">
+
+      <label for="name">Введите Ф.И.О.:<input id="name" type="text" name="name" placeholder="Иванов Иван Иванович" required/></label>
+      
+
+      <label for="phone">Введите номер телефона:<input id="phone" type="tel" name="name" placeholder="+79887776655" required/></label>
+      
+
+      <label for="email">Введите email:<input type="email" name="email" id="email" placeholder="Ivan123@mail.ru" required></label>
+      
+
+      <label for="date">Введите дату рождения:<input type="date" name="date" id="date" required></label>
+
+      <label for="m">
+        <input type="radio" id="m" name="title" value="M." required>
+        Mister
+      </label>
+      <input type="radio" name="title" value="Ms." required>
+        Miss
+      
+      <label for="multi">
+        Любимый язык программирования:
+        <select multiple name="multi" id="multi" required>
+          <option>Pascal</option>
+          <option>C</option>
+          <option>C++</option>
+          <option>JavaScript</option>
+          <option>PHP</option>
+          <option>Python</option>
+          <option>Java</option>
+          <option>Haskel</option>
+          <option>Clojure</option>
+          <option>Prolog</option>
+          <option>Scala</option>
+        </select>
+      </label>
+
+      <label for="message">
+        Ваша биография:
+        <textarea id="message" name="message"
+        placeholder="Родился бла бла... Поступил бла бла..." required></textarea>
+      </label>
+
+      <label for="checkbox">
+        С контрактом не ознакомлен
+        <input id="checkbox" type="checkbox" name="checkbox" required>
+      </label> 
+      
+      <button type="submit">Сохранить</button>(не нажимать, всё ломается)
+
+    </form>
+
+    <form id="myForm" class="frame">
+      <span>Товар:</span>
+      <select id="product" name="select" required>
+        <option value="Конфета">Конфета</option>
+        <option value="Булочка">Булочка</option>
+        <option value="Батончик">Батончик</option>
+        <option value="Плитка шоколада">Плитка шоколада</option>
+        <option value="Торт">Торт</option>
+      </select>
+      <p>Цена за 1 шт. : <span id="value">5 рублей</span>.</p>
+      <br>
+      <span>Кол-во(min 1, max 100):</span>
+      <input name="field1" type="number" min="1" max="100" value="5" required>
+      <button id="button" >Посчитать</button>
+      <p id="result">Итого: <span id="answer"></span></p>
+      
+    </form>
+
+    <form id="parent" class="frame">
+      <p>Какой напиток желаете?</p>
+      <input id="drink1" type="radio" name="title2" value="Вода" required>
+      <span>Вода (10 рублей)</span>
+      <br>
+      <br>
+      <input id="drink2" type="radio" name="title2" value="Кофе" required>
+      <span>Кофе (100 рублей)</span>
+      <br>
+      <br>
+      <input id="drink3" type="radio" name="title2" value="Сок" required>
+      <span>Сок (Цена зависит от выбранного вскуса)</span>
+      <br>
+      <br>
+    </form>
+
+    <div class="frame">
+      <div id="gallery">
+
+      </div>
+      <div id="points">
+          
+      </div>
+    </div>
+
+    <form class="frame" action="bad" method="post" id="last_form">
+      <h3 id="caption">Форма обратной связи.</h3>
+
+      <div id="feedback_form">
+        <label for="name">Введите Ф.И.О.:<input id="input_1" type="text" name="name" placeholder="Иванов Иван Иванович" required/></label>
+        
+  
+        <label for="phone">Введите номер телефона:<input id="input_2" type="tel" name="name" placeholder="+79887776655" required/></label>
+        
+  
+        <label for="email">Введите email:<input type="email" name="email" id="input_3" placeholder="Ivan123@mail.ru" required></label>
+  
+        <label for="message">
+          Ваше сообщение:
+          <textarea id="input_4" name="message"
+          placeholder="Довожу до вашего сведения..." required></textarea>
+        </label>
+  
+        <label for="checkbox">
+          Согласен с политикой обработки персональных данных
+          <input id="input_5" type="checkbox" name="checkbox" required>
+        </label> 
+        
+        <button type="submit" id="submit_final">Сохранить</button>
+        
+      </div>
+    </form>
+
+    <div id="TV">
+      <table id="table">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Year of birth</th>
+            <th scope="col">Weight</th>
+            <th scope="col">Height</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Jim</th>
+            <td>1999</td>
+            <td>80</td>
+            <td>170</td>
+          </tr>
+          <tr>
+            <th scope="row">Bob</th>
+            <td>1976</td>
+            <td>90</td>
+            <td>180</td>
+          </tr>
+          <tr>
+            <th scope="row">Tom</th>
+            <td>2001</td>
+            <td>100</td>
+            <td>178</td>
+          </tr>
+          <tr>
+            <th scope="row">Anna</th>
+            <td>1975</td>
+            <td>60</td>
+            <td>167</td>
+          </tr>
+          <tr>
+            <th scope="row">Lo</th>
+            <td>1990</td>
+            <td>90</td>
+            <td>190</td>
+          </tr>
+          <tr>
+            <th scope="row">Rex</th>
+            <td>1993</td>
+            <td>98</td>
+            <td>200</td>
+          </tr>
+          <tr>
+            <th scope="row">Dean</th>
+            <td>1977</td>
+            <td>77</td>
+            <td>160</td>
+          </tr>
+          <tr>
+            <th scope="row">Sasha</th>
+            <td>1974</td>
+            <td>88</td>
+            <td>182</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <th scope="row" colspan="2">Average weight</th>
+            <td colspan="2">85,375</td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+  <footer><h2>@MagomedMurtuzaev</h2></footer>
+
+  <script src="./script.js"></script>
+
+</body>
+</html>
