@@ -534,43 +534,51 @@ function onClick_3(event) {
   if(applicantForm.checkValidity()){
     event.preventDefault();
     alert("Данные успешно отправлены.");
+    localStorage.clear();
+    clear();
   }
 }
 window.addEventListener('hashchange',changeStyle2);
 
+const input_1 = document.querySelector("#input_1");
+const input_2 = document.querySelector("#input_2");
+const input_3 = document.querySelector("#input_3");
+const input_4 = document.querySelector("#input_4");
+const input_5 = document.querySelector("#input_5");
+
 function handler(event) {
-  const input_1 = document.querySelector("#input_1");
-  const input_2 = document.querySelector("#input_2");
-  const input_3 = document.querySelector("#input_3");
-  const input_4 = document.querySelector("#input_4");
-  const input_5 = document.querySelector("#input_5");
-  localStorage.setItem("input_1", input_1.getAttribute("value"));
-  localStorage.setItem("input_2", input_2.getAttribute("value"));
-  localStorage.setItem("input_3", input_3.getAttribute("value"));
-  localStorage.setItem("input_4", input_4.getAttribute("value"));
-  localStorage.setItem("input_5", input_5.getAttribute("value"));
+  localStorage.setItem("input_1", input_1.value);
+  localStorage.setItem("input_2", input_2.value);
+  localStorage.setItem("input_3", input_3.value);
+  localStorage.setItem("input_4", input_4.value);
+  localStorage.setItem("input_5", input_5.checked);
 }
 
 function defaultValues(){
-  const input_1 = document.querySelector("#input_1");
-  const input_2 = document.querySelector("#input_2");
-  const input_3 = document.querySelector("#input_3");
-  const input_4 = document.querySelector("#input_4");
-  const input_5 = document.querySelector("#input_5");
   let value_1 = localStorage.getItem("input_1");
   let value_2 = localStorage.getItem("input_2");
   let value_3 = localStorage.getItem("input_3");
   let value_4 = localStorage.getItem("input_4");
   let value_5 = localStorage.getItem("input_5");
-  input_1.setAttribute("value", value_1);
-  input_2.setAttribute("value", value_2);
-  input_3.setAttribute("value", value_3);
-  input_4.setAttribute("value", value_4);
-  input_5.setAttribute("value", value_5);
+  if(value_1!==null) input_1.value = value_1;
+  if(value_2!==null) input_2.value = value_2;
+  if(value_3!==null) input_3.value = value_3;
+  if(value_4!==null) input_4.value = value_4;
+  if(value_5!==null){
+    if(value_5 == "true") input_5.checked = value_5;
+    else input_5.checked = null;
+  } 
+}
+function clear(){
+  input_1.value = "";
+  input_2.value = "";
+  input_3.value = "";
+  input_4.value = "";
+  input_5.checked = null;
 }
 
-
-
-applicantForm.addEventListener('input', handler)
-applicantForm.addEventListener('change', handler)
-
+input_1.addEventListener('change', handler);
+input_2.addEventListener('change', handler);
+input_3.addEventListener('change', handler);
+input_4.addEventListener('change', handler);
+input_5.addEventListener('change', handler);
